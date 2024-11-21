@@ -5,6 +5,7 @@ import NoPage from "./component/NoPage";
 import Admin from "./component/Admin";
 import AddClient from "./component/AddClient";
 import Home from "./component/Home";
+import Review from "./component/Review";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/addclient" element={<AddClient/>}/>
         <Route path="/admin" element={<Admin/>}/>
+        <Route path="/review" element={<Review/>}/>
         <Route path="*" element={<NoPage/>}/>
       </Routes>
     </BrowserRouter>

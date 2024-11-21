@@ -8,7 +8,6 @@ const Home = () => {
     <>
     <Navbar/>
     <div className='flex'>
-      
     <Sidebar/>
     <Dashboard/>
     </div>
