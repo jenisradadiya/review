@@ -6,10 +6,12 @@ import Dashboard from './dashboard/Dashboard'
 const Home = () => {
   return (
     <>
-    <Navbar/>
     <div className='flex'>
     <Sidebar/>
+    <div>
+    <Navbar/>
     <Dashboard/>
+    </div>
     </div>
     </>
   )

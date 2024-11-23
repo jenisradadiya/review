@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const NoPage = () => {
   return (
@@ -9,12 +10,12 @@ const NoPage = () => {
         <p className="text-lg text-gray-600 mt-2">
           The page you are looking for doesn't exist or has been moved.
         </p>
-        <a 
-          href="/login" 
+        <NavLink
+          to="/login" 
           className="mt-6 inline-block px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-300"
         >
-          Go Home
-        </a>
+          Go Back to Login
+        </NavLink>
       </div>
     </div>
   )

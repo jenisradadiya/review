@@ -7,6 +7,9 @@ import { TbLogout2 } from "react-icons/tb";
 const Sidebar = () => {
   return (
     <aside className="bg-gray-800 text-white w-64 h-screen flex flex-col shadow-md">
+      <div className="p-4 text-lg font-bold border-b border-gray-700">
+        Menu
+      </div>
       <nav className="flex-1 p-4 space-y-4">
         <a
           href="#"
