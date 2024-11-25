@@ -1,143 +1,116 @@
-import React from 'react'
+import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const AddClient = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showAdminPassword, setShowAdminPassword] = useState(false);
+
   return (
-    <>
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
-        {/* Form Title */}
-        <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
-          Add New User
-        </h2>
-
-        {/* Form */}
-        <form className="space-y-6">
-          {/* Name */}
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter name"
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter email"
-            />
-          </div>
-
-          {/* Phone Number */}
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Phone Number
-            </label>
-            <input
-              type="text"
-              id="phone"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter phone number"
-            />
-          </div>
-
-          {/* Business Name */}
-          <div>
-            <label
-              htmlFor="businessName"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Business Name
-            </label>
-            <input
-              type="text"
-              id="businessName"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter business name"
-            />
-          </div>
-
-          {/* Google Business Link */}
-          <div>
-            <label
-              htmlFor="googleLink"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Google Business Link
-            </label>
-            <input
-              type="url"
-              id="googleLink"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter Google business link"
-            />
-          </div>
-
-          {/* Admin ID */}
-          <div>
-            <label
-              htmlFor="adminId"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Admin ID
-            </label>
-            <input
-              type="text"
-              id="adminId"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter admin ID"
-            />
-          </div>
-
-          {/* Admin Password */}
-          <div>
-            <label
-              htmlFor="adminPassword"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Admin Password
-            </label>
-            <input
-              type="password"
-              id="adminPassword"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Enter admin password"
-            />
-          </div>
-
-          {/* Submit Button */}
-          <div>
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              Add User
-            </button>
-          </div>
-        </form>
+    <div className="flex flex-col justify-center items-center flex-grow bg-white px-6 sm:px-10 md:px-16 lg:px-24 my-10 mx-auto rounded-2xl shadow-xl max-w-4xl">
+    {/* Right Section */}
+    <div className="flex flex-col justify-center items-center flex-grow w-full">
+      <div className="text-center md:text-left mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold">Add Client</h2>
       </div>
+  
+      {/* Form */}
+      <form className="w-full max-w-md space-y-6">
+        {/* Name */}
+        <input
+          type="text"
+          placeholder="Name"
+          className="w-full px-4 py-3 border-b border-gray-400 focus:outline-none focus:border-black"
+        />
+  
+        {/* Email */}
+        <input
+          type="email"
+          placeholder="Email"
+          className="w-full px-4 py-3 border-b border-gray-400 focus:outline-none focus:border-black"
+        />
+  
+        {/* Contact Number */}
+        <input
+          type="text"
+          placeholder="Contact Number"
+          className="w-full px-4 py-3 border-b border-gray-400 focus:outline-none focus:border-black"
+        />
+  
+        {/* Business Name */}
+        <input
+          type="text"
+          placeholder="Business Name"
+          className="w-full px-4 py-3 border-b border-gray-400 focus:outline-none focus:border-black"
+        />
+  
+        {/* Business Link */}
+        <input
+          type="text"
+          placeholder="Business Link (e.g., https://example.com)"
+          className="w-full px-4 py-3 border-b border-gray-400 focus:outline-none focus:border-black"
+        />
+  
+        {/* Password */}
+        <div className="relative">
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            className="w-full px-4 py-3 border-b border-gray-400 focus:outline-none focus:border-black"
+          />
+          {showPassword ? (
+            <FaEyeSlash
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 bottom-3 text-xl text-gray-500 cursor-pointer"
+            />
+          ) : (
+            <FaEye
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 bottom-3 text-xl text-gray-500 cursor-pointer"
+            />
+          )}
+        </div>
+  
+        {/* Admin Password */}
+        <div className="relative">
+          <input
+            type={showAdminPassword ? "text" : "password"}
+            placeholder="Admin Password"
+            className="w-full px-4 py-3 border-b border-gray-400 focus:outline-none focus:border-black"
+          />
+          {showAdminPassword ? (
+            <FaEyeSlash
+              onClick={() => setShowAdminPassword(!showAdminPassword)}
+              className="absolute right-3 bottom-3 text-xl text-gray-500 cursor-pointer"
+            />
+          ) : (
+            <FaEye
+              onClick={() => setShowAdminPassword(!showAdminPassword)}
+              className="absolute right-3 bottom-3 text-xl text-gray-500 cursor-pointer"
+            />
+          )}
+        </div>
+  
+        {/* Register Button */}
+        <button
+          type="button"
+          className="w-full py-3 bg-black text-white font-semibold rounded-full hover:bg-white hover:text-black border border-black transition"
+        >
+          Register
+        </button>
+      </form>
+  
+      {/* Footer */}
+      <p className="text-sm mt-6 pb-3">
+        Already have an account?{" "}
+        <a href="/login" className="text-blue-600 font-semibold hover:underline">
+          Log In
+        </a>
+      </p>
     </div>
-    </>
-  )
-}
+  </div>
+  
 
-export default AddClient
+  );
+};
+
+export default AddClient;
