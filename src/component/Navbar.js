@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <div className="flex items-center justify-between h-20 px-4 border-b bg-white shadow-md">
-      <Typography.Title level={4} className="m-0">
+      <Typography.Title level={4} className="ml-10 my-2">
         Dashboard
       </Typography.Title>
       <Space>
