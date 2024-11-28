@@ -7,11 +7,7 @@ import AddClient from "./component/admin/AddClient";
 import Home from "./component/Home";
 import Review from "./component/Review";
 import Dashboard from "./component/Dashboard";
-import BadReviews from "./component/dashboard/BadReviews";
-import Profile from "./component/dashboard/Profile";
-import MyQR from "./component/dashboard/MyQR";
-import Content from "./component/dashboard/Content"
-import Sidebar from "./component/Sidebar";
+
 
 function App() {
   return (
