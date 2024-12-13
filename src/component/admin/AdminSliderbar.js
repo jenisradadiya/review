@@ -2,12 +2,11 @@ import { Menu, Button, Drawer } from "antd";
 import { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { CiMenuBurger } from "react-icons/ci";
-import { MdQrCode } from "react-icons/md";
 import { RiDashboardFill, RiDashboardHorizontalLine } from "react-icons/ri";
 import { TbLogout2 } from "react-icons/tb";
 import { useLocation, useNavigate } from "react-router-dom";
 
-function Sidebar() {
+function AdminSidebar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [selectedKeys, setSelectedKeys] = useState(location.pathname);
@@ -16,10 +15,9 @@ function Sidebar() {
   useEffect(() => setSelectedKeys(location.pathname), [location.pathname]);
 
   const menuItems = [
-    {label: "Dashboard", icon: <RiDashboardFill/>,key: "/dashboard" },
-    { label: "Bad Reviews",icon: <RiDashboardHorizontalLine/>, key: "/badreviews" },
-    { label: "Profile",icon: <CgProfile/>, key: "/profile" },
-    { label: "My QR",icon: <MdQrCode/>, key: "/myqr" },
+    {label: "Admin Panel", icon: <RiDashboardFill/>,key: "/dashboard" },
+    {label: "Customer List",icon: <RiDashboardHorizontalLine/>, key: "/badreviews" },
+    {label: "Add Customer",icon: <CgProfile/>, key: "/profile" },
   ];
 
   return (
@@ -63,4 +61,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default AdminSidebar;

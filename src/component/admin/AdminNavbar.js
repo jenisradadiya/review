@@ -2,7 +2,7 @@ import { BellFilled, MailOutlined } from "@ant-design/icons";
 import { Badge, Drawer, List, Space, Typography } from "antd";
 import { useState } from "react";
 
-function Navbar() {
+function AdminNavbar() {
   const [comments] = useState([{ body: "This is the first comment." }, { body: "This is the second comment." }]);
   const [orders] = useState([{ title: "Product 1" }, { title: "Product 2" }]);
   const [commentsOpen, setCommentsOpen] = useState(false);
@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <div className="flex items-center justify-between h-20 px-4 border-b bg-white shadow-md">
       <Typography.Title level={4} className="ml-10 my-2">
-        Dashboard
+        Admin Panel
       </Typography.Title>
       <Space>
         <Badge count={comments.length} dot>
@@ -31,4 +31,5 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default AdminNavbar;
+
